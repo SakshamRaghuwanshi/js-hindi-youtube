@@ -50,6 +50,51 @@ const iceTeaPrice = 100
 iceTeaPrice <= 80 ? console.log("less than 80"): console.log("more than 80")
 
 
+//***switch case statements*****/
+
+// switch (keys){
+//     case value:
+
+//     break;
+
+//     default:
+//         break;
+// }
+
+const month = 3
+
+switch (month){
+    case 1:
+        console.log("January");
+        break;
+
+        default:
+            break;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
