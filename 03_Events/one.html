@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html events</title>
+</head>
+<body style="background-color: blue;">
+    <h2>Amazing Images</h2>
+    <!-- <div>
+        <ul id="Images>
+        <li></li>
+        </ul>
+    </div> -->
+</body>
+<script>
+    // events in javascript runs sequentially
+    // document.getElementById('owl').onclick = function () {
+    //     alert("owl clicked")
+    //     }
+
+
+      //attachEvent()
+   //jQuery - on
+    //type, timestamp, defaultprevented
+    //target, toElement, srcElement, currentTarget
+    //clientX, clientY, screenX, screenY
+    //altkey, ctrlkey, shiftkey, keycode
+ 
+    // document.getElementById('owl').addEventListener('click', function(){
+    //     alert("owl clicked again")
+    // })
+ 
+    document.getElementById('owl').addEventListener('click', function(e){
+     console.log('e');
+    }, false)
+   
+  //There are 2 context of event propagation. One is public and another is capturing.
+
+ document.getElementById('images').addEventListener('click', function(e){
+     console.log("click inside the ul");
+     e.stopPropagation()
+    }, false)
+   
+//event propagation from inside to outside(public)
+//capturing goes from top to bottom
+document.getElementById('google').addEventListener('click', function(e){
+    e.preventDefault();
+    e.stopPropagation()
+    console.log("google clicked");
+}, false)
+
+
+//for removing content like images on click
+
+document.querySelector('#images').addEventListener('click', function(e){
+    console.log(e.target.parentNode);
+    let removeIt = e.target.parentNode
+    removeIt.remove()
+
+    
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
